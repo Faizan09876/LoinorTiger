@@ -1,11 +1,11 @@
 package com.faizan.loinortiger;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.gridlayout.widget.GridLayout;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.GridLayout;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -105,13 +105,13 @@ public class MainActivity extends AppCompatActivity {
                         && PlayerChoices[Winnercolumns[1]] == PlayerChoices[Winnercolumns[2]] && PlayerChoices[Winnercolumns[0]] != Player.NO) {
 
                     if (currentPlayer == Player.ONE) {
-                        WinnerofGame = "Player One";
+                        WinnerofGame = "Player Two";
                     } else if (currentPlayer == Player.TWO) {
 
-                        WinnerofGame = " Player Two";
+                        WinnerofGame = " Player One";
 
                     }
-                    Toast.makeText(getApplicationContext(), WinnerofGame + "Player Two is Winner", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), WinnerofGame + "is Winner", Toast.LENGTH_LONG).show();
 
                     GameOver = true;
                     btnreset.setVisibility(View.VISIBLE);
@@ -127,8 +127,21 @@ public class MainActivity extends AppCompatActivity {
 
              ImageView imageView =  (ImageView) gridlayout.getChildAt(index);
              imageView.setImageDrawable(null);
+             imageView.setAlpha(0.2f);
          }
+            currentPlayer = Player.ONE;
 
+            PlayerChoices[0] = Player.NO;
+            PlayerChoices[1] = Player.NO;
+            PlayerChoices[2] = Player.NO;
+            PlayerChoices[3] = Player.NO;
+            PlayerChoices[4] = Player.NO;
+            PlayerChoices[5] = Player.NO;
+            PlayerChoices[6] = Player.NO;
+            PlayerChoices[7] = Player.NO;
+            PlayerChoices[8] = Player.NO;
+
+            GameOver = false;
         }
 
 }
