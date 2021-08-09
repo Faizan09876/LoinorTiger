@@ -58,15 +58,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        PlayerChoices[0] = Player.NO;
-        PlayerChoices[1] = Player.NO;
-        PlayerChoices[2] = Player.NO;
-        PlayerChoices[3] = Player.NO;
-        PlayerChoices[4] = Player.NO;
-        PlayerChoices[5] = Player.NO;
-        PlayerChoices[6] = Player.NO;
-        PlayerChoices[7] = Player.NO;
-        PlayerChoices[8] = Player.NO;
+        for(int index = 0 ; index < PlayerChoices.length; index ++){
+
+            PlayerChoices[index] = Player.NO;
+        }
 
 
     }
@@ -111,12 +106,12 @@ public class MainActivity extends AppCompatActivity {
                         WinnerofGame = " Player One";
 
                     }
-                    Toast.makeText(getApplicationContext(), WinnerofGame + "is Winner", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), WinnerofGame + " is Winner", Toast.LENGTH_LONG).show();
 
                     GameOver = true;
                     btnreset.setVisibility(View.VISIBLE);
                 }
-            }
+             }
         }
 
 
@@ -131,17 +126,23 @@ public class MainActivity extends AppCompatActivity {
          }
             currentPlayer = Player.ONE;
 
-            PlayerChoices[0] = Player.NO;
-            PlayerChoices[1] = Player.NO;
-            PlayerChoices[2] = Player.NO;
-            PlayerChoices[3] = Player.NO;
-            PlayerChoices[4] = Player.NO;
-            PlayerChoices[5] = Player.NO;
-            PlayerChoices[6] = Player.NO;
-            PlayerChoices[7] = Player.NO;
-            PlayerChoices[8] = Player.NO;
+//            PlayerChoices[0] = Player.NO;
+//            PlayerChoices[1] = Player.NO;
+//            PlayerChoices[2] = Player.NO;
+//            PlayerChoices[3] = Player.NO;
+//            PlayerChoices[4] = Player.NO;
+//            PlayerChoices[5] = Player.NO;
+//            PlayerChoices[6] = Player.NO;
+//            PlayerChoices[7] = Player.NO;
+//            PlayerChoices[8] = Player.NO;
+
+            for(int index = 0 ; index < PlayerChoices.length; index ++){
+
+            PlayerChoices[index] = Player.NO;
+            }
 
             GameOver = false;
+            btnreset.setVisibility(View.INVISIBLE);
         }
 
 }
